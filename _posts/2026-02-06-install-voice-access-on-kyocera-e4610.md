@@ -5,11 +5,11 @@ published: true
 
 Here are my notes on installing Google Voice Access (for Voice-to-Text) on a Kyocera DuraXV E4610.
 
-1. Find Android version: `adb shell getprop ro.build.version.release`
+Find Android version: `adb shell getprop ro.build.version.release`
 
 `7.1.1`
 
-2. Find CPU architecture: `adb shell getprop ro.product.cpu.abi`
+Find CPU architecture: `adb shell getprop ro.product.cpu.abi`
 
 `armeabi-v7a`
 
