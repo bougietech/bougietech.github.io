@@ -18,7 +18,7 @@ s = size
 
 The image contains the original metadata too, which is interesting.
 
-
+![GIF demo saving pictures from Google Maps](/assets/images/3731de930dd578edd688ff9777f7bbbc24bdd50c.gif)
 
 Why 16383?
 Entering any number larger than the largest dimension of the original image will download the original file from what I can tell. I discovered by trial and error that 16383 is the largest number it will accept. Apparently 16383 = 0x3FFF the maximum value that can be expressed with 14 bits, a limitation of the Webp image format.
