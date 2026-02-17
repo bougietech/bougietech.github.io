@@ -48,11 +48,11 @@ I'm using FreePBX 17. In the web console, navigate to Admin > CID Superfecta.
 
 Click on the schema named `Default`. This will show the available methods for Caller ID lookup. Find the LDAP entry, click Enable, then use the arrow to move it to the top of the list.
 
-![LDAP CID](assets/images/ldap-entry.PNG)
+![LDAP CID](/assets/images/ldap-entry.PNG)
 
 Then click the wrench icon to edit settings. Here is a screenshot of the configs I used:
 
-![LDAP config on FreePBX](assets/images/LDAP-config-FreePBX.PNG)
+![LDAP config on FreePBX](/assets/images/LDAP-config-FreePBX.PNG)
 
 Apparently the Host field requires a domain; it does not work with an IP address. So I used `l2cpbg.com` which matches the LDAP configurations in L2CPBG. Then I added an entry to `/etc/hosts` on the FreePBX machine to map l2cpbg.com to the ip address of the L2CPBG server.
 
