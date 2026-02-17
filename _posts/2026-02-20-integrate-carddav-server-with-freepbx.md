@@ -3,7 +3,7 @@ title: Integrating CardDAV server with FreePBX for Caller ID
 published: false
 ---
 
-When helping a client migrate from a cell phone to a FreePBX VOIP phone system, I was looking for a good contact management system. The main requirement was a way to display the names of saved contacts on the IP phones for incoming calls.
+When helping a client migrate his business from a cell phone to a FreePBX VOIP phone system, I was looking for a good contact management system. The main requirement was a way to display the names of saved contacts on the IP phones for incoming calls.
 
 Many VOIP handsets have an LDAP phonebook feature. When a call comes in, they can query an LDAP server with the phone number and display the name if a contact with a matching number is found.
 
@@ -35,12 +35,12 @@ addressbooks = "My Contacts"
 ### Configuring LDAP on handsets
 You can configure VOIP handsets to query the L2CPBG server. This allows Number>Name lookups for incoming calls as well as Name>Number searches from the handset (depending on your particular handset's features).
 
-Config details vary among phone manufacturers. Here is a screenshot from the web interface of a Grandstream WP825 handset:
+Config details vary among phone manufacturers and models. Here is a screenshot from the web interface of a Grandstream WP825 handset:
 
 ![LDAP Phonebook configs on GS WP825](/assets/images/ldap-phonebook-configs.png)
 
 ### Configuring LDAP on FreePBX
-In my case, I encountered inconsistencies in the way the LDAP phonebook feature is implemented on the different phones I was using. Also, the PBX was unaware of the LDAP phonebook, so Call Detail Records did not reflect the correct name.
+In my case, I encountered inconsistencies in the LDAP phonebook implementation across multiple phones. Also, the PBX was unaware of the LDAP phonebook, so Call Detail Records did not reflect the correct name.
 
 So I pivoted to configuring LDAP lookup directly within FreePBX. It turns out, this is not very difficult to do.
 
@@ -54,7 +54,7 @@ Then click the wrench icon to edit settings. Here is a screenshot of the configs
 
 ![LDAP config on FreePBX](/assets/images/LDAP-config-FreePBX.PNG)
 
-Apparently the Host field requires a domain; it does not work with an IP address. So I used `l2cpbg.com` which matches the LDAP configurations in L2CPBG. Then I added an entry to `/etc/hosts` on the FreePBX machine to map l2cpbg.com to the ip address of the L2CPBG server.
+Apparently the Host field requires a domain; it does not work with an IP address. So I used `l2cpbg.com` which matches the LDAP configurations in L2CPBG. Then I added an entry to `/etc/hosts` on the FreePBX machine to map `l2cpbg.com` to the ip address of the L2CPBG server.
 
 `nano /etc/hosts`
 ```
