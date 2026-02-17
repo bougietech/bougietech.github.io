@@ -1,6 +1,6 @@
 ---
 title: Integrating CardDAV server with FreePBX for Caller ID
-published: false
+published: true
 ---
 
 When helping a client migrate his business from a cell phone to a FreePBX VOIP phone system, I was looking for a good contact management system. The main requirement was a way to display the names of saved contacts on the IP phones for incoming calls.
