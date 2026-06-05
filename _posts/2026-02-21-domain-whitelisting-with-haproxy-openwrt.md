@@ -43,7 +43,11 @@ chain tproxy_prerouting {
 chain forward {
     type filter hook forward priority filter; policy accept;
 
-    # Block direct LAN > WAN web traffic (fail closed)
+    # Block all direct LAN > WAN web traffic except for private IP ranges (fail closed)
+    ip daddr 10.0.0.0/8 accept
+    ip daddr 172.16.0.0/12 accept
+    ip daddr 192.168.0.0/16 accept
+
     iifname "br-lan" oifname "wan" tcp dport {80,443} reject
     iifname "br-lan" oifname "wan" udp dport 443 reject
 }
