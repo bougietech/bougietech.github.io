@@ -29,4 +29,5 @@ cat ~/.ssh/id_ed25519.pub
 Sign into your Github account and navigate to Settings > SSH and GPG keys. [https://github.com/settings/keys](https://github.com/settings/keys)
 
 Click New SSH key, give it a name and paste it in.
+![add-ssh-key-github](/assets/images/add-ssh-key-github.png)
 
