@@ -31,3 +31,4 @@ Sign into your Github account and navigate to Settings > SSH and GPG keys. [http
 Click New SSH key, give it a name and paste it in.
 ![add-ssh-key-github](/assets/images/add-ssh-key-github.png)
 
+For more details, see [Generating a new SSH key and adding it to the ssh-agent - GitHub Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
